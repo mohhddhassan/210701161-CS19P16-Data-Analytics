@@ -1,0 +1,34 @@
+HADOOP commands 
+
+TO put a file into to Hadoop hdfs environment 
+hadoop  fs -put
+
+hadoop fs -put <local_source_path> <HDFS_destination_path>
+
+hadoop fs -put /Users/mohamedhussainshahulhameed/Desktop/DA/ex1/test_file.txt  /ex1
+
+hadoop jar /path/to/hadoop-streaming.jar \ 
+-files /path/to/mapper.py, /path/to/reducer.py \ 
+-input /path/to/input \
+-output /path/to/output \
+-mapper mapper.py \
+-reducer reducer.py 
+
+hadoop jar //Users/mohamedhussainshahulhameed/hadoop-3.4.0/share/hadoop/tools/lib/hadoop-streaming-3.4.0.jar\
+-files /Users/mohamedhussainshahulhameed/Desktop/DA/ex1/mapper.py, /Users/mohamedhussainshahulhameed/Desktop/DA/ex1/reducer.py
+-input /ex1/test_file.txt\
+-output /ex1/output \
+-mapper mapper.py \
+-reducer reducer.py 
+
+ This option specifies the Python scripts (mapper and reducer) that need to be distributed across the nodes.
+  
+hadoop jar //Users/mohamedhussainshahulhameed/hadoop-3.4.0/share/hadoop/tools/lib/hadoop-streaming-3.4.0.jar\
+-files /Users/mohamedhussainshahulhameed/Desktop/DA/ex3/mapper.py, /Users/mohamedhussainshahulhameed/Desktop/DA/ex3/reducer.py
+-input /ex1/sample_weather.txt\
+-output /ex1/output \
+-mapper mapper.py \
+-reducer reducer.py 
+
+PIG COMMANDS 
+pig -x local udf_example.pig
